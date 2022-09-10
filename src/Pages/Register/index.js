@@ -1,102 +1,50 @@
 import { Card } from "@mui/material";
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Form from "react-validation/build/form";
 import Buttons from "../../Components/Buttons/index";
+import UserService from '../../Service/UserService'
+import {  validarSenha,  validarNome, validarConfirmarSenha } from '../../utils/validadores'
 
+import { useNavigate } from "react-router-dom";
 
-import AuthService from "../../Service/auth-service";
+const userService = new UserService()
 
-
-
-
-
-
-
-const vpassword = value => {
-  if (value.length < 6 || value.length > 40) {
-    return (
-      <div className="alert alert-danger" role="alert">
-        The password must be between 6 and 40 characters.
-      </div>
-    );
-  }
-};
-
-export default class Register extends Component {
-  constructor(props) {
-    super(props);
-    this.handleRegister = this.handleRegister.bind(this);
-    this.onChangeUsername = this.onChangeUsername.bind(this);
-    this.onChangeEmail = this.onChangeEmail.bind(this);
-    this.onChangePassword = this.onChangePassword.bind(this);
-
-    this.state = {
-      username: "",
-      email: "",
-      password: "",
-      successful: false,
-      message: ""
-    };
-  }
-
-  onChangeUsername(e) {
-    this.setState({
-      username: e.target.value
-    });
-  }
-
-  onChangeEmail(e) {
-    this.setState({
-      email: e.target.value
-    });
-  }
-
-  onChangePassword(e) {
-    this.setState({
-      password: e.target.value
-    });
-  }
-
-  handleRegister(e) {
-    e.preventDefault();
-
-    this.setState({
-      message: "",
-      successful: false
-    });
-
-    this.form.validateAll();
-
-    if (this.checkBtn.context._errors.length === 0) {
-      AuthService.register(
-        this.state.username,
-        this.state.email,
-        this.state.password
-      ).then(
-        response => {
-          this.setState({
-            message: response.data.message,
-            successful: true
-          });
-        },
-        error => {
-          const resMessage =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
-
-          this.setState({
-            successful: false,
-            message: resMessage
-          });
-        }
-      );
+const Register =()=> {
+const [loading, setLoading] = useState()
+const [form, setForm]= useState([])
+const navigate = useNavigate()
+ const handleSubmit = async(event)=>{
+  event.preventDefault()
+  try{
+    setLoading(true)
+    const {data}= await userService.cadastrar({
+      nome: form.nome,
+      password: form.password
+    })
+    if(data){
+      const responseLogin = await userService.login({
+        nome : form.nome,
+        password: form.password
+      })
+      if ( responseLogin === true){
+        alert('usuário Cadastrado com Sucesso')
+        navigate('/')
+      }
     }
+    setLoading(false)
   }
-
-  render() {
+  catch(err){
+    alert('algo deu errado ao cadastrar'+ err)
+  }
+ }    
+ const handleChange = (event)=>{
+  setForm({...form, [event.target.name]:event.target.value})
+ }
+ const validadorInput = () => {
+  return validarSenha(form.password)
+  && validarConfirmarSenha(form.password, form.confirmarPassword)
+  && validarNome(form.nome)
+}
     return (
       <div className="Form">
            <div className="header"> 
@@ -106,13 +54,8 @@ export default class Register extends Component {
         <Card className="cardlogin">
           
 
-          <Form
-            onSubmit={this.handleRegister}
-            ref={c => {
-              this.form = c;
-            }}
-          >
-            {!this.state.successful && (
+          <Form>
+           
               <div>
                 <div className="form-group">
                   <label className="label" htmlFor="username">Username</label>
@@ -120,51 +63,45 @@ export default class Register extends Component {
                     type="text"
                     className="Input"
                     name="username"
-                    value={this.state.username}
-                    onChange={this.onChangeUsername}
+                    onChange={handleChange}
                    
                   />
                 </div>
-
-               
-
                 <div className="form-group">
                   <label htmlFor="password" className="label">Password</label>
                   <input
                     type="password"
                     className="Input"
                     name="password"
-                    value={this.state.password}
-                    onChange={this.onChangePassword}
+                    
+                    onChange={handleChange}
+                   
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password" className="label">Confirmar Senha</label>
+                  <input
+                    type="password"
+                    className="Input"
+                    name="confirmarPassword"
+                    
+                    onChange={handleChange}
                    
                   />
                 </div>
 
                 <div className="form-group">
                 <a className="login" href="/login">login</a>
-                  <button className="btn btn-primary btn-block">Sign Up</button>
+                  <button className="btn" onClick={handleSubmit}  >Sign Up</button>
                 </div>
               </div>
-            )}
+       
 
-            {this.state.message && (
-              <div className="form-group">
-                <div
-                  className={
-                    this.state.successful
-                      ? "alert alert-success"
-                      : "alert alert-danger"
-                  }
-                  role="alert"
-                >
-                  {this.state.message}
-                </div>
-              </div>
-            )}
-           
+          
+             
           </Form>
         </Card>
       </div>
     );
   }
-}
+export default Register
