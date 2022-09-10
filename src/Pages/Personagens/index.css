@@ -1,0 +1,67 @@
+.personagens{
+    display: flex;
+    background-color: black!important;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.header{
+    align-items: center;
+}
+.logo{
+    width:500px;
+    align-items: center;
+    margin-left: 40%;
+}
+.count{
+    background-color: black!important;
+    color:#FFE81F;
+    width:400rem;
+  margin-left: 48%;
+   
+
+}
+.total{
+    font-size: 30px;
+}
+.content{
+    margin-top:-400px;
+    display: flex;
+    flex-wrap:wrap;
+     max-width: 1100px;
+     width:200rem;
+    justify-content: space-between;
+    gap:10px;
+    margin-left: 20%;
+}
+.name{
+    margin-left: 40px;
+}
+.card-personagem{
+    width:220px;
+    height: 300px;
+    text-align: center;
+    background-color: black!important;
+    color: #FFE81F !important;
+    border: 1px solid #FFE81F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    
+}
+.navigation-page{
+    display: flex;
+    flex-direction: row;
+    justify-content:center ;
+    gap:20px
+}
+.btn{
+    width:200px;
+    height: 60px;
+    background-color: black;
+    border: 1px solid #FFE81F;
+    color: #FFE81F;
+    border-radius: 20px;
+
+}

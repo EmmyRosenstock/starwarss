@@ -1,0 +1,35 @@
+.contents{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-around;
+    background-color: black;
+    height: 900px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    height: 360px;
+    border: 4px solid #FFE81F !important;
+    background-color: black!important;
+
+}
+.chewe{
+    width: 50%;
+    background-color: black;
+   margin: auto;
+    
+}
+.title{
+    color:#FFE81F;
+    font-size: 30px!important;
+    font-weight: bold !important;
+    text-align: center;
+
+}
+.card:hover{
+    -webkit-transform: rotateZ(10deg);
+    -ms-transform: rotateZ(10deg);
+    transform: rotateZ(10deg);
+}
