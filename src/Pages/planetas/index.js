@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa'
+import {AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Buttons from "../../Components/Buttons/index";
 import './index.css'
-import { Card, List } from '@mui/material'
+import { Card, List, Typography } from '@mui/material'
 
 
 const Planetas = () => {
@@ -50,23 +50,24 @@ const Planetas = () => {
     }
 
     return (
-        <div id="main">
-             <div className="header"> 
-        <img className="logo"  src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/694px-Star_Wars_Logo.svg.png'/>
-        <Buttons/>
-        </div>
+        <div className="personagens">
 
-            <div className="count">
-                <h1>TOTAL PLANETS: {countPlanetas}</h1>
-                
-            </div>
-
-            <div id="content">
-                {planetas.map(planetas => (
-                    <Card className="card-planetas" key={planetas.name}>
-                        <h2>{planetas.name}</h2>
-                        <List className='list'>
-                        <li>
+        <div className="header">
+          <a className="looggo"><img className="logo"  src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/694px-Star_Wars_Logo.svg.png'/></a> 
+  
+  <Buttons/>
+  </div>
+      
+      
+      <div className="content">
+      <div className="count"> 
+       <Typography className="total">Total de Planetas: {countPlanetas}</Typography></div>
+          {planetas.map(planetas => (
+              <Card className="card-personagem" key={planetas.name}>
+                <div className="name"><h2>{planetas.name}</h2></div>
+                 
+                 <List className="list">
+                 <li>
                             <ul>
                                 <span>Rotação</span>
                                 <span> {planetas.rotation_period}</span>
@@ -88,24 +89,19 @@ const Planetas = () => {
                                 <span>{planetas.gravity}</span>
                             </ul>
                         </li>
-                        </List>
-                       
-                        
-                        
-           
-                    
-                    </Card>
-                ))}
-            </div>
+               
+                 </List>
+               </Card>
+          ))}
 
-            <div className="navigation-page">
-                <button id="btnPrevious" onClick={handlePreviousPage}><FaArrowCircleLeft />PREVIOUS PAGE</button>
+      </div>
+      <div className="navigation-page">
+      
+          <button className="btn" onClick={handlePreviousPage}><AiOutlineArrowLeft />PREVIOUS PAGE</button>
+         <button className="btn" onClick={handleNextPage}>NEXT PAGE<AiOutlineArrowRight /></button>
+      </div>
 
-                <button id="btnNext" onClick={handleNextPage}>NEXT PAGE<FaArrowCircleRight /></button>
-            </div>
-
-          
-        </div>
+  </div>
     )
 }
 

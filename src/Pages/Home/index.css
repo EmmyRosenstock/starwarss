@@ -50,3 +50,20 @@
     -ms-transform: rotateZ(10deg);
     transform: rotateZ(10deg);
 }
+@media (max-width: 599px) { 
+    .logo{
+        width: 70% !important;
+    }
+    .looggo{
+       
+       margin-left: -100px;
+        
+    }
+    
+ }
+ @media (min-width: 600px)  {
+    .logo{
+        width: 40% !important;
+    }
+    
+ }

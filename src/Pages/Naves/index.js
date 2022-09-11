@@ -51,8 +51,9 @@ const Naves = () => {
     return (
         <div className="personagens">
 
-              <div className="header"> 
-        <img className="logo"  src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/694px-Star_Wars_Logo.svg.png'/>
+              <div className="header">
+                <a className="looggo"><img className="logo"  src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/694px-Star_Wars_Logo.svg.png'/></a> 
+        
         <Buttons/>
         </div>
             

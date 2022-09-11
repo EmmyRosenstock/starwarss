@@ -1,0 +1,21 @@
+@media (max-width: 599px) { 
+    .content{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .navigation-page{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       width: 100%;
+       margin-top: 30px;
+       margin-left: 80px;
+       flex-wrap: wrap;
+    }
+    .saibaMais{
+       margin-left: 10px;
+        
+    }
+        
+    }

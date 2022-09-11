@@ -33,3 +33,42 @@
     -ms-transform: rotateZ(10deg);
     transform: rotateZ(10deg);
 }
+@media (max-width: 599px) { 
+    .contents{
+        display: flex;
+        flex-direction: column ;
+        justify-content: space-around;
+        background-color: black;
+        height: 900px;
+    }
+    .card{
+        width: 360px;
+        height: 360px;
+       
+    
+    }
+    
+ }
+ @media (min-width: 600px)  {
+    .contents{
+        display: flex;
+        flex-direction: row ;
+        justify-content: space-around;
+        background-color: black;
+        height: 900px;
+    }
+    .card{
+        width: 320px;
+        height: 320px;
+       
+    
+    }
+    .title{
+       
+        font-size: 20px!important;
+       
+    
+    }
+ }
+
+

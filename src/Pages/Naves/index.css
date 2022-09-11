@@ -2,4 +2,50 @@
     color: #FFE81F;
     text-decoration: none;
     margin-left: 70px;
+    border: solid 1px #FFE81F;
+    border-radius: 20px;
+    width:200px;
+    height: 60px;
+    text-align: center;
+    justify-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
 }
+@media (max-width: 599px) { 
+    .content{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .navigation-page{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       width: 100%;
+       margin-top: 30px;
+       margin-left: 80px;
+       flex-wrap: wrap;
+    }
+    .saibaMais{
+       margin-left: 10px;
+        
+    }
+        
+    }
+    @media (min-width: 600px)  {
+        .logo{
+            width: 40% !important;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+           flex-wrap: wrap;
+        }
+        .count{
+            margin-left: 20px;
+            width: 200px;
+        }
+     }

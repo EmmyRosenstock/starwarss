@@ -65,3 +65,12 @@
     border-radius: 20px;
 
 }
+@media (max-width: 599px) { 
+    .count{
+     width: 20%;
+      margin-left: 18px;
+       
+    
+    }
+        
+    }
