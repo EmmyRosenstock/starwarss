@@ -50,13 +50,6 @@ const SaibaMais = () => {
 
     return (
         <div className="personagens">
-
-              <div className="header"> 
-        <img className="logo"  src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/694px-Star_Wars_Logo.svg.png'/>
-        <Buttons/>
-        </div>
-            
-            
             <div className="content">
             <div className="count"> 
              <Typography className="total">Total de Espaço Naves: {countEspacoNaves}</Typography></div>
@@ -98,7 +91,7 @@ const SaibaMais = () => {
 
             </div>
             <div className="navigation-page">
-            <a className="saibaMais" href="/registrar">Saiba Mais</a>
+           
                 <button className="btn" onClick={handlePreviousPage}><AiOutlineArrowLeft />PREVIOUS PAGE</button>
                <button className="btn" onClick={handleNextPage}>NEXT PAGE<AiOutlineArrowRight /></button>
             </div>
