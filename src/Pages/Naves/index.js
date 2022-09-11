@@ -71,25 +71,9 @@ const Naves = () => {
                          <span> Modelo: </span>   
                          <span>{espacoNaves.model}</span>
                         </ul>
-                        <ul>
-                         <span> Monofatura: </span>   
-                         <span>{espacoNaves.manufacturer}</span>
-                        </ul>
+                    
                        
-                        <ul>
-                         <span> Comprimento: </span>   
-                         <span>{espacoNaves.length} </span>
-                        </ul>
-                        <ul>
-                         <span> Velocidade: </span>   
-                         <span>{espacoNaves.max_atmosphering_speed} </span>
-                        </ul>
-                        <ul>
-                         <span> Capacidade de carga: </span>   
-                         <span> {espacoNaves.cargo_capacity} </span>
-                        </ul>
                        
-                         <a className="saibaMais" href="/login">Saiba Mais</a>
                         </li>
                      
                        </List>
@@ -98,6 +82,7 @@ const Naves = () => {
 
             </div>
             <div className="navigation-page">
+            <a className="saibaMais" href="/registrar">Saiba Mais</a>
                 <button className="btn" onClick={handlePreviousPage}><AiOutlineArrowLeft />PREVIOUS PAGE</button>
                <button className="btn" onClick={handleNextPage}>NEXT PAGE<AiOutlineArrowRight /></button>
             </div>

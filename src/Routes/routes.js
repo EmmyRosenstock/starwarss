@@ -8,6 +8,7 @@ import Login from '../Pages/Login/login';
 import Register from '../Pages/Register';
 import ProtectedRoutes from './ProtectedRoutes';
 import  SaibaMais from '../Pages/Saibamais/Saibamais'
+import {PrivateRoute} from 'react-auth-kit'
 const Routering =()=> {
   
   return (
@@ -19,9 +20,7 @@ const Routering =()=> {
     <Route path ="/planetas" element ={<Planetas/>}/>
     <Route path ="/login" element ={<Login/>}/>
     <Route path ="/registrar" element ={<Register/>}/>
-    <ProtectedRoutes>
-      < SaibaMais/>
-    </ProtectedRoutes>
+    
     </Routes>
     </BrowserRouter>
   );
