@@ -3,6 +3,14 @@ import { Alert, Card } from "@mui/material";
 import Login from "../Login/login";
 import Buttons from "../../Components/Buttons";
 import './register.css'
+import { decodeToken } from "react-jwt";
+import { useForm } from "react-hook-form";
+
+function Decode(token1) {
+  const decodedToken1 = decodeToken(token1.token);
+  console.log(decodedToken1);
+}
+
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,7 +19,8 @@ function Register() {
   const [flag, setFlag] = useState(false);
   const [login, setLogin] = useState(true);
   
-
+  const { register, handleSubmit, watch, errors } = useForm();
+  const onSubmit = (data) => Decode(data);
 
   function handleFormSubmit(e) {
     e.preventDefault();
@@ -34,9 +43,6 @@ function Register() {
   function handleClick() {
     setLogin(!login);
   }
-
- 
-  
 
   return (
     <>
@@ -68,6 +74,7 @@ function Register() {
                   className="Input"
                   placeholder="Enter password"
                   onChange={(event) => setPassword(event.target.value)}
+                  onSubmit={handleSubmit(onSubmit)}
                 />
               </div>
 
