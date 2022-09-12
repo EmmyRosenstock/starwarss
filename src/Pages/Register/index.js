@@ -55,8 +55,8 @@ function Register() {
           {" "}
           {login ? (
             <Card className='cardlogin'>
-                <form onSubmit={handleFormSubmit}>
-              <h3 className="title">Cadastrar</h3>
+                <form onSubmit={handleSubmit(handleFormSubmit)}>
+              <h3 className="title">Cadastrar</h3>s
                <div className="form-group">
                 <label className="label">Email</label>
                 <input
@@ -74,12 +74,12 @@ function Register() {
                   className="Input"
                   placeholder="Enter password"
                   onChange={(event) => setPassword(event.target.value)}
-                  onSubmit={handleSubmit(onSubmit)}
+            
                 />
               </div>
 
               
-              <button type="submit" className="btnLogin ">
+              <button type="submit" className="btnLogin " onClick={handleFormSubmit}>
                 Register
               </button>
               <p onClick={handleClick} className="logina">
