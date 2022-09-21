@@ -6,7 +6,7 @@ import Naves from './Pages/Naves';
 import Planetas from './Pages/planetas';
 import Login from './Pages/Login/login';
 import Register from './Pages/Register';
-
+import PrivateRoute from './helpers/privateRouter';
 function App() {
   
   return (

@@ -5,14 +5,8 @@
     justify-content: center;
 
 }
-.header{
-    align-items: center;
-}
-.logo{
-    width:500px;
-    align-items: center;
-    margin-left: 40%;
-}
+
+
 .count{
     background-color: black!important;
     color:#FFE81F;
@@ -27,7 +21,7 @@
 .content{
     margin-top:-400px;
     display: flex;
-    flex-wrap:wrap;
+     flex-direction: row;
      max-width: 1100px;
      width:200rem;
     justify-content: space-between;
