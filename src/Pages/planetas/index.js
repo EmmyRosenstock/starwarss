@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import {AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+
 import Buttons from "../../Components/Buttons/index";
 import './index.css'
 import { Card, List, Typography } from '@mui/material'
@@ -97,8 +97,8 @@ const Planetas = () => {
       </div>
       <div className="navigation-page">
       
-          <button className="btn" onClick={handlePreviousPage}><AiOutlineArrowLeft />PREVIOUS PAGE</button>
-         <button className="btn" onClick={handleNextPage}>NEXT PAGE<AiOutlineArrowRight /></button>
+          <button className="btn" onClick={handlePreviousPage}>PREVIOUS PAGE </button>
+         <button className="btn" onClick={handleNextPage}>NEXT PAGE </button>
       </div>
 
   </div>

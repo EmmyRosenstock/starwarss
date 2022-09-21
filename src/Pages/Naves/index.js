@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import api from "../../helpers/api";
 import { Card, List, Typography } from "@mui/material";
-import {AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+
 import './index.css'
 import Buttons from "../../Components/Buttons/index";
 const Naves = () => {
@@ -85,8 +85,8 @@ const Naves = () => {
             </div>
             <div className="navigation-page">
             <a className="saibaMais" href="/registrar">Saiba Mais</a>
-                <button className="btn" onClick={handlePreviousPage}><AiOutlineArrowLeft />PREVIOUS PAGE</button>
-               <button className="btn" onClick={handleNextPage}>NEXT PAGE<AiOutlineArrowRight /></button>
+                <button className="btn" onClick={handlePreviousPage}>PREVIOUS PAGE</button>
+               <button className="btn" onClick={handleNextPage}>NEXT PAGE</button>
             </div>
 
         </div>
